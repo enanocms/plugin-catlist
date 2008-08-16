@@ -113,13 +113,14 @@ function catlist_print_category($cat_name, $do_subs, $do_pages)
       
       $have_subcats = true;
       
-      $ticker++;
       if ( $ticker == 3 )
       {
         $ticker = 0;
-        $html = '</tr><tr>';
+        $html .= '</tr><tr>';
         $class = ( $class == 'row1' ) ? 'row2' : 'row1';
       }
+      $ticker++;
+      
       $inner = '<a href="' . makeUrlNS($row['namespace'], $row['page_id'], false, true) . '">' . htmlspecialchars($row['name']) . '</a>';
       $html .= '<td style="width: 33.3%;" class="' . $class . '">' . $inner . '</td>';
     }
@@ -160,13 +161,14 @@ function catlist_print_category($cat_name, $do_subs, $do_pages)
       
       $have_pages = true;
       
-      $ticker++;
       if ( $ticker == 3 )
       {
         $ticker = 0;
-        $html = '</tr><tr>';
+        $html .= '</tr><tr>';
         $class = ( $class == 'row1' ) ? 'row2' : 'row1';
       }
+      $ticker++;
+      
       $inner = '<a href="' . makeUrlNS($row['namespace'], $row['page_id'], false, true) . '">' . htmlspecialchars($row['name']) . '</a>';
       $html .= '<td style="width: 33.3%;" class="' . $class . '">' . $inner . '</td>';
     }
