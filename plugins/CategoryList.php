@@ -2,7 +2,7 @@
 /*
 Plugin Name: Category list
 Plugin URI: http://enanocms.org/
-Description: A simple parser hook to display the contents of a category within another page. Syntax is {{Category:<cat name>|sub=(on|off)|pages=(on|off)}}. (Both sub [subcategories] and pages default to on)
+Description: A simple parser hook to display the contents of a category within another page. Syntax is {{CategoryContents:<cat name>|sub=(on|off)|pages=(on|off)}}. (Both sub [subcategories] and pages default to on)
 Author: Dan Fuhry
 Version: 1.0
 Author URI: http://enanocms.org/
