@@ -9,14 +9,14 @@ Author URI: http://enanocms.org/
 */
 
 // attach parser hook
-$plugins->attachHook('render_wikiformat_pre', 'catlist_parser_hook($text);');
+$plugins->attachHook('render_wikiformat_veryearly', 'catlist_parser_hook($text);');
 
 function catlist_parser_hook(&$text)
 {
   if ( preg_match_all('/\{\{
-                         Category:
+                         CategoryContents:
                          ([^|\r\n\a\t]+?)                                              # category name
-                         (\|(?:(?:[a-z0-9_]+)(?:[\s]*)=(?:[\s]*)(?:[^\}\r\n\a\t]+)))   # parameters
+                         (\|(?:(?:[a-z0-9_]+)(?:[\s]*)=(?:[\s]*)(?:[^\}\r\n\a\t]+)))?  # parameters
                        \}\}/x', $text, $matches) )
   {
     foreach ( $matches[0] as $i => $match )
@@ -106,7 +106,7 @@ function catlist_print_category($cat_name, $do_subs, $do_pages)
     $ticker = 0;
     $have_subcats = false;
     $class = 'row1';
-    while ( $row = $db->fetchrow() )
+    while ( $row = $db->fetchrow($q) )
     {
       if ( empty($row['is_subcategory']) )
         break;
