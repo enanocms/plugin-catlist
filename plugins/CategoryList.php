@@ -135,6 +135,7 @@ function catlist_print_category($cat_name, $do_subs, $do_pages)
       $ticker++;
       $html .= '<td style="width: 33.3%;" class="' . $class . '"></td>';
     }
+    $html .= '</tr>';
     $html .= '</table></div>';
   }
   if ( $do_subs && $do_pages )
@@ -185,6 +186,7 @@ function catlist_print_category($cat_name, $do_subs, $do_pages)
       $ticker++;
       $html .= '<td style="width: 33.3%;" class="' . $class . '"></td>';
     }
+    $html .= '</tr>';
     $html .= '</table></div>';
   }
   return $html;
