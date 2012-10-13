@@ -65,7 +65,7 @@ function catlist_print_category($cat_name, $do_subs, $do_pages)
                       . "  LEFT JOIN " . table_prefix . "pages AS p\n"
                       . "    ON ( p.urlname = c.page_id AND p.namespace = c.namespace )\n"
                       . "  WHERE c.category_id = '$cat_id'\n"
-                      . "  ORDER BY is_subcategory DESC;");
+                      . "  ORDER BY is_subcategory DESC, p.name ASC;");
   }
   else
   {
@@ -87,7 +87,7 @@ function catlist_print_category($cat_name, $do_subs, $do_pages)
                       . "  LEFT JOIN " . table_prefix . "pages AS p\n"
                       . "    ON ( p.urlname = c.page_id AND p.namespace = c.namespace )\n"
                       . "  WHERE c.category_id = '$cat_id' AND $where\n"
-                      . "  ORDER BY is_subcategory DESC;");
+                      . "  ORDER BY is_subcategory DESC, p.name ASC;");
   }
   if ( !$q )
     $db->_die();
